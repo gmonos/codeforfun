@@ -1,4 +1,5 @@
-﻿using DisplayApplication.DataProvider;
+﻿using DisplayApplication.BusinessLayer;
+using DisplayApplication.DataProvider;
 using DisplayApplication.Interfaces;
 using System;
 
@@ -23,7 +24,7 @@ namespace DisplayApplication
         /// <summary>
         /// Change implementation to use your provider
         /// </summary>
-        protected static IAdultUserDisplay AdultUserDisplayProvider { get { throw new NotImplementedException(); } }
+        protected static IAdultUserDisplay AdultUserDisplayProvider { get { return new AdultUserDisplay(); } }
 
         /// <summary>
         /// Do not change anything on Main
@@ -32,6 +33,7 @@ namespace DisplayApplication
         private static void Main(string[] args)
         {
             AdultUserDisplayProvider.DisplayUsers(new UserProvider());
+            Console.ReadLine();
         }
      
     }

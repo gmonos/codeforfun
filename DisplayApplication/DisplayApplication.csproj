@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessLayer\AdultUserDisplay.cs" />
     <Compile Include="BusinessLayer\BaseUserDisplay.cs" />
     <Compile Include="BusinessModel\User.cs" />
     <Compile Include="DataProvider\UserProvider.cs" />
