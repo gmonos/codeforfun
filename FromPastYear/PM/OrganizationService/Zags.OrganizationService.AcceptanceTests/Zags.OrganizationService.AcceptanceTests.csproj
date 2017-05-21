@@ -1,0 +1,251 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{22D6A57E-7575-4087-99C3-50078183B142}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Zags.OrganizationService.AcceptanceTests</RootNamespace>
+    <AssemblyName>Zags.OrganizationService.AcceptanceTests</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Castle.Core.3.3.3\lib\net45\Castle.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CsQuery, Version=1.3.3.5, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CsQuery.1.3.3\lib\net40\CsQuery.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DbUp, Version=3.3.5.0, Culture=neutral, PublicKeyToken=4b419c53bdfd4cbf, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\dbup.3.3.5\lib\net35\DbUp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FluentAssertions, Version=4.14.0.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\FluentAssertions.4.14.0\lib\net45\FluentAssertions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FluentAssertions.Core, Version=4.14.0.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\FluentAssertions.4.14.0\lib\net45\FluentAssertions.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Moq, Version=4.5.21.0, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Moq.4.5.21\lib\net45\Moq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Nancy, Version=1.4.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Nancy.1.4.1\lib\net40\Nancy.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Nancy.Testing, Version=1.4.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Nancy.Testing.1.4.1\lib\net40\Nancy.Testing.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="paramore.brighter.commandprocessor, Version=6.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\paramore.brighter.commandprocessor.6.1.1\lib\net45\paramore.brighter.commandprocessor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Polly, Version=4.1.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Polly.4.1.2\lib\net45\Polly.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Serilog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Serilog.2.2.1\lib\net45\Serilog.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Serilog.Settings.AppSettings, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Serilog.Settings.AppSettings.2.0.0\lib\net45\Serilog.Settings.AppSettings.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TechTalk.SpecFlow, Version=2.1.0.0, Culture=neutral, PublicKeyToken=0778194805d6db41, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SpecFlow.2.1.0\lib\net45\TechTalk.SpecFlow.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Topshelf, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b800c4cfcdeea87b, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Topshelf.4.0.1\lib\net452\Topshelf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xbehave.Core, Version=2.1.0.0, Culture=neutral, PublicKeyToken=e4957f48888f9fe8, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xbehave.Core.2.1.0\lib\portable-net45\Xbehave.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xbehave.Execution.desktop, Version=2.1.0.0, Culture=neutral, PublicKeyToken=e4957f48888f9fe8, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xbehave.Core.2.1.0\lib\portable-net45\Xbehave.Execution.desktop.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="xunit.abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\xunit.abstractions.2.0.0\lib\net35\xunit.abstractions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="xunit.assert, Version=2.1.0.3179, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\xunit.assert.2.1.0\lib\dotnet\xunit.assert.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="xunit.core, Version=2.1.0.3179, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\xunit.extensibility.core.2.1.0\lib\dotnet\xunit.core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="xunit.execution.desktop, Version=2.1.0.3179, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\xunit.extensibility.execution.2.1.0\lib\net45\xunit.execution.desktop.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Bootstrap.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\DatasetsResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatasetsResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Specflow\ATTD\CreateAnOrganization.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CreateAnOrganization.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Specflow\ATTD\CreateAnOrganizationSteps.cs" />
+    <Compile Include="Specflow\ATTD\SearchAnOrganizationSimpleSearch.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SearchAnOrganizationSimpleSearch.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Specflow\ATTD\SearchAnOrganizationSimpleSearchSteps.cs" />
+    <Compile Include="Specflow\ATTD\SelectAnOrganization.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SelectAnOrganization.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Specflow\ATTD\SelectAnOrganizationSteps.cs" />
+    <Compile Include="Specflow\Standard\Organization.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Organization.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Specflow\Standard\OrganizationSteps.cs" />
+    <Compile Include="XBehaveNet\SearchOrganizationFeature.cs" />
+    <Compile Include="Specflow\FeatureBase.cs" />
+    <Compile Include="TestViewFactory.cs" />
+    <Compile Include="XBehaveNet\UseDatabaseAttribute.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Specflow\ATTD\CreateAnOrganization.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CreateAnOrganization.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Specflow\ATTD\SearchAnOrganizationSimpleSearch.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>SearchAnOrganizationSimpleSearch.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Specflow\ATTD\SelectAnOrganization.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>SelectAnOrganization.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Specflow\Standard\Organization.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Organization.feature.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Foundation\Zags.Application.Brighter.Nancy\Zags.Application.Brighter.Nancy.csproj">
+      <Project>{35DF1835-EAF1-459A-8B85-FF5A23FB5926}</Project>
+      <Name>Zags.Application.Brighter.Nancy</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Foundation\Zags.Application.Brighter\Zags.Application.Brighter.csproj">
+      <Project>{7C7CE641-76F1-4DE9-9CD0-7DA2134480D2}</Project>
+      <Name>Zags.Application.Brighter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Foundation\Zags.DataAccess.Dapper\Zags.DataAccess.Dapper.csproj">
+      <Project>{6c997232-423e-42cd-844e-d8ac2b83ee3f}</Project>
+      <Name>Zags.DataAccess.Dapper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Foundation\Zags.DataAccess\Zags.DataAccess.csproj">
+      <Project>{6a1856d9-5077-4b67-892b-0c156be841d7}</Project>
+      <Name>Zags.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Foundation\Zags.Domain\Zags.Domain.csproj">
+      <Project>{862a8fb6-9327-4dbc-bf1a-2af95deb21c5}</Project>
+      <Name>Zags.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Foundation\Zags.Logging.Serilog\Zags.Logging.Serilog.csproj">
+      <Project>{7db7c2e5-b7f4-4728-9c41-8684e4311169}</Project>
+      <Name>Zags.Logging.Serilog</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Foundation\Zags.Logging\Zags.Logging.csproj">
+      <Project>{e628db85-311c-4724-831b-c63a81352db7}</Project>
+      <Name>Zags.Logging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Foundation\Zags.Utilities\Zags.Utilities.csproj">
+      <Project>{00e01ce4-5f33-4b1b-9bd6-13e28c5e406b}</Project>
+      <Name>Zags.Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Zags.OrganizationService.API\Zags.OrganizationService.API.csproj">
+      <Project>{17535bf2-88b0-47fc-bc41-cf8a3bf81e5c}</Project>
+      <Name>Zags.OrganizationService.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Zags.OrganizationService.Application\Zags.OrganizationService.Application.csproj">
+      <Project>{757B16AA-A740-401B-B037-30A1AC0B054E}</Project>
+      <Name>Zags.OrganizationService.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Zags.OrganizationService.Database\Zags.OrganizationService.Database.csproj">
+      <Project>{9e2581d9-3917-4ccf-b232-1c63e7d2ed6b}</Project>
+      <Name>Zags.OrganizationService.Database</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Zags.OrganizationService.Domain\Zags.OrganizationService.Domain.csproj">
+      <Project>{230e3368-25b9-4fef-bc62-67e5f93b2b84}</Project>
+      <Name>Zags.OrganizationService.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\DatasetsResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>DatasetsResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\OrganizationDataset.sql" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

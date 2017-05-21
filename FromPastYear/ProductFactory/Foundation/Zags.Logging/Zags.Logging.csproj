@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0">
+  <PropertyGroup>
+    <TargetFramework>netstandard1.6</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="**\*.cs" />
+    <EmbeddedResource Include="**\*.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="CoreCompat.Newtonsoft.Json" Version="9.0.2-beta001" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="1.1.0" />
+    <PackageReference Include="NETStandard.Library" Version="1.6" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ZAGS.Domain\ZAGS.Domain.csproj" />
+    <ProjectReference Include="..\Zags.Utility\Zags.Utility.csproj" />
+  </ItemGroup>
+</Project>

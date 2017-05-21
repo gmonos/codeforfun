@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A4FE30AE-7D7D-4C01-A9AA-EAEE0297DD3A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Zags.OrganizationService.Application.Axa</RootNamespace>
+    <AssemblyName>Zags.OrganizationService.Application.Axa</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dapper, Version=1.50.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Dapper.1.50.2\lib\net451\Dapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Nancy, Version=1.4.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Nancy.1.4.3\lib\net40\Nancy.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="paramore.brighter.commandprocessor, Version=6.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\paramore.brighter.commandprocessor.6.1.1\lib\net45\paramore.brighter.commandprocessor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Polly, Version=4.1.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Polly.4.1.2\lib\net45\Polly.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Adapters\AxaPMRepository.cs" />
+    <Compile Include="Controllers\AxaPMCommandModule.cs" />
+    <Compile Include="Ports\Domain\OrganizationAxa.cs" />
+    <Compile Include="Ports\Commands\AxaCommandExtension.cs" />
+    <Compile Include="Ports\Factories\AxaDomainFactory.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Foundation\Zags.Application.Brighter\Zags.Application.Brighter.csproj">
+      <Project>{7c7ce641-76f1-4de9-9cd0-7da2134480d2}</Project>
+      <Name>Zags.Application.Brighter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Foundation\Zags.DataAccess.Dapper\Zags.DataAccess.Dapper.csproj">
+      <Project>{6C997232-423E-42CD-844E-D8AC2B83EE3F}</Project>
+      <Name>Zags.DataAccess.Dapper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Foundation\Zags.Domain\Zags.Domain.csproj">
+      <Project>{862A8FB6-9327-4DBC-BF1A-2AF95DEB21C5}</Project>
+      <Name>Zags.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Zags.OrganizationService.Application\Zags.OrganizationService.Application.csproj">
+      <Project>{757b16aa-a740-401b-b037-30a1ac0b054e}</Project>
+      <Name>Zags.OrganizationService.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Zags.OrganizationService.Domain\Zags.OrganizationService.Domain.csproj">
+      <Project>{230e3368-25b9-4fef-bc62-67e5f93b2b84}</Project>
+      <Name>Zags.OrganizationService.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

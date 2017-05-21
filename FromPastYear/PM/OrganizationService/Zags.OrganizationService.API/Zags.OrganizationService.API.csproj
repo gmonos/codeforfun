@@ -1,0 +1,319 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{17535BF2-88B0-47FC-BC41-CF8A3BF81E5C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Zags.OrganizationService.API</RootNamespace>
+    <AssemblyName>Zags.OrganizationService.API</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="IdentityModel, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\IdentityModel.1.13.0\lib\net45\IdentityModel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="IdentityServer3.AccessTokenValidation, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\IdentityServer3.AccessTokenValidation.2.11.0\lib\net45\IdentityServer3.AccessTokenValidation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Protocol.Extensions, Version=1.0.2.33, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.IdentityModel.Protocol.Extensions.1.0.2.206221351\lib\net45\Microsoft.IdentityModel.Protocol.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Hosting, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Owin.Hosting.3.0.1\lib\net45\Microsoft.Owin.Hosting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Jwt, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Owin.Security.Jwt.3.0.1\lib\net45\Microsoft.Owin.Security.Jwt.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.RegistrationByConvention, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Nancy, Version=1.4.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Nancy.1.4.3\lib\net40\Nancy.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Nancy.Bootstrappers.Unity, Version=1.4.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Nancy.Bootstrappers.Unity.1.4.1\lib\net40\Nancy.Bootstrappers.Unity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Nancy.Hosting.Self, Version=1.4.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Nancy.Hosting.Self.1.4.1\lib\net40\Nancy.Hosting.Self.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Nancy.MSOwinSecurity, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Nancy.MSOwinSecurity.2.0.0\lib\net45\Nancy.MSOwinSecurity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Nancy.Owin, Version=1.4.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Nancy.Owin.1.4.1\lib\net40\Nancy.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="paramore.brighter.commandprocessor, Version=6.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\paramore.brighter.commandprocessor.6.1.8\lib\net45\paramore.brighter.commandprocessor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="paramore.brighter.commandprocessor.messagestore.mssql, Version=6.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\paramore.brighter.commandprocessor.messagestore.mssql.6.1.8\lib\net45\paramore.brighter.commandprocessor.messagestore.mssql.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="paramore.brighter.commandprocessor.messaginggateway.rmq, Version=6.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\paramore.brighter.commandprocessor.messaginggateway.rmq.6.1.8\lib\net45\paramore.brighter.commandprocessor.messaginggateway.rmq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Polly, Version=4.1.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Polly.4.1.2\lib\net45\Polly.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RabbitMQ.Client, Version=3.6.1.0, Culture=neutral, PublicKeyToken=89e7d7c5feba84ce, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\RabbitMQ.Client.3.6.1\lib\net45\RabbitMQ.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Serilog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Serilog.2.2.1\lib\net45\Serilog.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Serilog.Settings.AppSettings, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Serilog.Settings.AppSettings.2.0.0\lib\net45\Serilog.Settings.AppSettings.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Serilog.Sinks.Console, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Serilog.Sinks.Console.2.1.0\lib\net45\Serilog.Sinks.Console.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Serilog.Sinks.File, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Serilog.Sinks.File.3.0.1\lib\net45\Serilog.Sinks.File.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Serilog.Sinks.MSSqlServer, Version=4.1.1.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Serilog.Sinks.MSSqlServer.4.1.1\lib\net45\Serilog.Sinks.MSSqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Serilog.Sinks.PeriodicBatching, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Serilog.Sinks.PeriodicBatching.2.0.0\lib\net45\Serilog.Sinks.PeriodicBatching.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Serilog.Sinks.RollingFile, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Serilog.Sinks.RollingFile.3.0.1\lib\net45\Serilog.Sinks.RollingFile.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.SqlServer.Compact.4.0.8876.1\lib\net40\System.Data.SqlServerCe.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=4.0.20622.1351, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.IdentityModel.Tokens.Jwt.4.0.2.206221351\lib\net45\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Adapters\Configuration\PMConfiguration.cs" />
+    <Compile Include="Adapters\Controllers\EFAddressQueryModule.cs" />
+    <Compile Include="Adapters\Controllers\EFOrganizationQueryModule.cs" />
+    <Compile Include="Adapters\Controllers\AddressQueryModule.cs" />
+    <Compile Include="Adapters\Controllers\OrganizationCommandModule.cs" />
+    <Compile Include="Adapters\Controllers\OrganizationQueryModule.cs" />
+    <Compile Include="Adapters\Controllers\QueryModuleUtilities.cs" />
+    <Compile Include="Adapters\Service\IoCConfiguration.cs" />
+    <Compile Include="Adapters\Service\OrganizationService.cs" />
+    <Compile Include="Adapters\Service\StartUp.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DDL Scripts\MSSQL\MessageStore.sql" />
+    <Content Include="DDL Scripts\SQLite\MessageStore.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Foundation\Zags.Application.Brighter.Nancy\Zags.Application.Brighter.Nancy.csproj">
+      <Project>{35DF1835-EAF1-459A-8B85-FF5A23FB5926}</Project>
+      <Name>Zags.Application.Brighter.Nancy</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Foundation\Zags.Application.Brighter.Unity\Zags.Application.Brighter.Unity.csproj">
+      <Project>{704A789C-0806-4013-8BA8-C7C3B39B28B4}</Project>
+      <Name>Zags.Application.Brighter.Unity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Foundation\Zags.Application.Brighter\Zags.Application.Brighter.csproj">
+      <Project>{7c7ce641-76f1-4de9-9cd0-7da2134480d2}</Project>
+      <Name>Zags.Application.Brighter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Foundation\Zags.DataAccess.Dapper\Zags.DataAccess.Dapper.csproj">
+      <Project>{6C997232-423E-42CD-844E-D8AC2B83EE3F}</Project>
+      <Name>Zags.DataAccess.Dapper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Foundation\Zags.DataAccess.EF\Zags.DataAccess.EF.csproj">
+      <Project>{EF5B8294-5D25-4393-B03E-46E01E18E376}</Project>
+      <Name>Zags.DataAccess.EF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Foundation\Zags.DataAccess\Zags.DataAccess.csproj">
+      <Project>{6A1856D9-5077-4B67-892B-0C156BE841D7}</Project>
+      <Name>Zags.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Foundation\Zags.Domain.Tracking\Zags.Domain.Tracking.csproj">
+      <Project>{ce837ae8-5d65-4853-b051-ae5722019e74}</Project>
+      <Name>Zags.Domain.Tracking</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Foundation\Zags.Domain\Zags.Domain.csproj">
+      <Project>{862a8fb6-9327-4dbc-bf1a-2af95deb21c5}</Project>
+      <Name>Zags.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Foundation\Zags.Logging.Middleware\Zags.Logging.Middleware.csproj">
+      <Project>{432EFBF3-51A9-4851-98C4-D68DBB7ABA05}</Project>
+      <Name>Zags.Logging.Middleware</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Foundation\Zags.Logging.Serilog\Zags.Logging.Serilog.csproj">
+      <Project>{7DB7C2E5-B7F4-4728-9C41-8684E4311169}</Project>
+      <Name>Zags.Logging.Serilog</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Foundation\Zags.Logging\Zags.Logging.csproj">
+      <Project>{E628DB85-311C-4724-831B-C63A81352DB7}</Project>
+      <Name>Zags.Logging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Foundation\Zags.Utilities\Zags.Utilities.csproj">
+      <Project>{00e01ce4-5f33-4b1b-9bd6-13e28c5e406b}</Project>
+      <Name>Zags.Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Foundation\Zags.Web.Nancy.Unity\Zags.Web.Nancy.Unity.csproj">
+      <Project>{bd9458c1-93ea-4598-b81e-089f83c64651}</Project>
+      <Name>Zags.Web.Nancy.Unity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Foundation\Zags.Web.Nancy\Zags.Web.Nancy.csproj">
+      <Project>{8904c20d-7dd1-451a-b77d-58513b0034af}</Project>
+      <Name>Zags.Web.Nancy</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Foundation\Zags.Web\Zags.Web.csproj">
+      <Project>{D74A82DB-6BBE-48F0-8E8D-1C7679D50B94}</Project>
+      <Name>Zags.Web</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Foundation\Zags.Web.Security\Zags.Web.Security.csproj">
+      <Project>{b730e316-bd35-4015-9b85-c12ce4e403f5}</Project>
+      <Name>Zags.Web.Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Zags.OrganizationService.Application.Axa\Zags.OrganizationService.Application.Axa.csproj">
+      <Project>{a4fe30ae-7d7d-4c01-a9aa-eaee0297dd3a}</Project>
+      <Name>Zags.OrganizationService.Application.Axa</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Zags.OrganizationService.Application\Zags.OrganizationService.Application.csproj">
+      <Project>{757b16aa-a740-401b-b037-30a1ac0b054e}</Project>
+      <Name>Zags.OrganizationService.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Zags.OrganizationService.Domain\Zags.OrganizationService.Domain.csproj">
+      <Project>{230e3368-25b9-4fef-bc62-67e5f93b2b84}</Project>
+      <Name>Zags.OrganizationService.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Zags.OrganizationService.Legacy\Zags.OrganizationService.Legacy.csproj">
+      <Project>{8d5de877-6793-414c-b66a-18f1d3bf9e9b}</Project>
+      <Name>Zags.OrganizationService.Legacy</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    if not exist "$(TargetDir)x86" md "$(TargetDir)x86"
+    xcopy /s /y "$(SolutionDir)packages\Microsoft.SqlServer.Compact.4.0.8876.1\NativeBinaries\x86\*.*" "$(TargetDir)x86"
+    if not exist "$(TargetDir)amd64" md "$(TargetDir)amd64"
+    xcopy /s /y "$(SolutionDir)packages\Microsoft.SqlServer.Compact.4.0.8876.1\NativeBinaries\amd64\*.*" "$(TargetDir)amd64"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
